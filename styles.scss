@@ -1,0 +1,255 @@
+$mobile-break: 768px;
+$sub-mobile-break: 600px;
+
+body {
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  flex-direction: row;
+  @media (max-width: $mobile-break) {
+    flex-direction: column;
+  }
+  margin: 0;
+}
+
+li {
+  display: block;
+  list-style: none;
+}
+
+.article-grid {
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: 46% 46%;
+  justify-content: right;
+  width: 65%;
+  @media (max-width: $mobile-break) {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .grid-item {
+    background-image: url('assets/jogging.jpeg');
+    background-position: top;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: flex-end;
+    margin-bottom: 14px;
+    min-height: 200px;
+    width: 96%;
+    @media (max-width: $mobile-break) {
+      max-height: 500px;
+      min-height: 500px;
+      flex-direction: column;
+      @media (max-width: $sub-mobile-break) {
+        max-height: 400px;
+        min-height: 400px;
+      }
+    }
+    .image-caption {
+      background: rgba(0, 0, 0, .5);
+      color: #fff;
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      height: auto;
+      position: relative;
+      @media (max-width: $mobile-break) {
+        background: #fff;
+        color: #000;
+      }
+      .article-title {
+        cursor: pointer;
+        font-family: 'Roboto Slab', serif;
+        font-size: 21px;
+        line-height: 25px;
+        min-height: 70px;
+        padding: 12px 0 8px 12px;
+        width: 70%;
+        @media (max-width: $mobile-break) {
+          font-size: 24px;
+          line-height: 26px;
+        }
+      }
+      .grid-share {
+        border: 2px solid #fff;
+        max-width: 44px;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        @media (max-width: $mobile-break) {
+          border-color: #ccc;
+          bottom: 24px;
+          top: auto;
+          color: #d00;
+          right: 42px;
+        }
+        .mobile-share-label {
+          display: none;
+          @media (max-width: $mobile-break) {
+            color: #ccc;
+            display: block;
+            font-size: 12px;
+            line-height: 20px;
+            position: absolute;
+            top: 10px;
+            right: -36px;
+          }
+        }
+      }
+      .article-detail-section {
+        display: flex;
+        flex-direction: row;
+        .author-avatar {
+          border-radius: 50%;
+          height: 44px;
+          margin: 0px 9px 9px 9px;
+          width: 44px;
+        }
+        .author-name, .author-description {
+          cursor: pointer;
+          font-size: 17px;
+          line-height: 20px;
+          @media (max-width: 958px) {
+            font-size: 14px;
+          }
+          @media (max-width: $mobile-break) {
+            color: #aaa;
+            font-size: 13px;
+            line-height: 20px;
+          }
+        }
+        .author-name {
+          margin: 0px 9px 3px 4px;
+        }
+        .author-description {
+          margin: 0 9px 0 4px;
+        }
+      }
+    }
+  }
+  .b-photo {
+    background-image: url('assets/new-york.jpeg');
+  }
+  .double-height {
+    background-image: url('assets/dress.jpeg');
+    grid-row: 1 / 3;
+    height: 493px;
+  }
+}
+
+.sidebar {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 0 0 0;
+  width: 35%;
+  @media (max-width: $mobile-break) {
+    width: 100%;
+  }
+  .sidebar-ad {
+    height: auto;
+    width: 86%;
+  }
+  .trending-header {
+    border-top: 3px solid #d00;
+    color: #d00;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 32px 0 0 0;
+    padding: 12px 0 9px 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 86%;
+  }
+}
+
+.trending {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  .trending-item {
+    background: #fff;
+    border-top: 1px solid #ccc;
+    display: flex;
+    flex-direction: row;
+    margin: 12px 0 2px 0;
+    padding: 12px 0 0 0;
+    position: relative;
+    width: 86%;
+    .trending-mobile-image {
+      display: none;
+      @media (max-width: $mobile-break) {
+        display: block;
+        height: auto;
+        max-height: 90px;
+        width: 40%;
+      }
+    }
+    .trending-title {
+      cursor: pointer;
+      font-family: 'Roboto Slab', serif;
+      font-size: 19px;
+      line-height: 23px;
+      margin: 6px 0 12px 0;
+      @media (max-width: $mobile-break) {
+        font-size: 18px;
+        line-height: 22px;
+        margin-left: 12px;
+      }
+    }
+    .trending-detail {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .author-avatar {
+        border-radius: 50%;
+        height: 44px;
+        width: 44px;
+        @media (max-width: $mobile-break) {
+          border: 2px solid #fff;
+          position: absolute;
+          top: 70px;
+          left: 90px;
+        }
+      }
+      .author-blurb {
+        color: #888;
+        font-size: 17px;
+        line-height: 20px;
+        padding: 0 0 0 12px;
+        width: 66%;
+        @media (max-width: $mobile-break) {
+          font-size: 13px;
+          line-height: 18px;
+          width: 100%;
+        }
+      }
+      .trending-share {
+        border: 1px solid #bbb;
+        color: #d00;
+        margin: 0 4px 0 0;
+        @media (max-width: $mobile-break) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.share-icon {
+  border-radius: 50%;
+  font-size: 30px;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  min-width: 44px;
+  transition: transform .1s;
+}
+
+.share-icon:hover {
+  cursor: pointer;
+  transform: translateY(2px);
+}
